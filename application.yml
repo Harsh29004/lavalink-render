@@ -33,21 +33,6 @@ metrics:
     enabled: true
     endpoint: /metrics
 
-lavasrc:
-  providers:
-    - "jssearch:\"%s\""
-    - "ytsearch:\"%s\""
-    - "ytmsearch:\"%s\""
-  sources:
-    spotify: true
-    jiosaavn: true
-  spotify:
-    clientId: "170948aa0bf4471ab68ec6fad28d1190"
-    clientSecret: "6ffcdd9dc48c44e3bbc6dc828e055831"
-    countryCode: "IN"
-  jiosaavn:
-    countryCode: "IN"
-
 plugins:
   - dependency: com.github.lavalink-devs:youtube-source:1.18.2
     snapshot: false
@@ -62,9 +47,9 @@ plugins:
       client: WEB
       oauth:
         refreshToken: ""
-  - dependency: com.github.topi314:Lavasrc:4.8.3
+  - dependency: com.github.topi314:Lavasrc:4.0.1
     snapshot: false
-    repository: https://maven.lavalink.dev/releases/
+    repository: https://maven.topi.wtf/releases/
     lavasrc:
       providers:
         - "jssearch:\"%s\""
