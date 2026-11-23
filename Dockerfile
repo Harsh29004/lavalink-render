@@ -1,7 +1,11 @@
-FROM ghcr.io/lavalink-devs/lavalink:4-alpine
+FROM eclipse-temurin:17-jre
 
-ENV _JAVA_OPTIONS="-Xms128M -Xmx300M"
+WORKDIR /app
 
-EXPOSE 10000
+ADD https://github.com/lavalink-devs/Lavalink/releases/download/4.0.8/Lavalink.jar Lavalink.jar
 
-COPY application.yml /opt/Lavalink/application.yml
+COPY application.yml .
+
+EXPOSE 2333
+
+CMD ["java", "-Xms128M", "-Xmx400M", "-jar", "Lavalink.jar"]
