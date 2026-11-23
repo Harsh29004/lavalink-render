@@ -33,6 +33,21 @@ metrics:
     enabled: true
     endpoint: /metrics
 
+lavasrc:
+  providers:
+    - "jssearch:\"%s\""
+    - "ytsearch:\"%s\""
+    - "ytmsearch:\"%s\""
+  sources:
+    spotify: true
+    jiosaavn: true
+  spotify:
+    clientId: "170948aa0bf4471ab68ec6fad28d1190"
+    clientSecret: "6ffcdd9dc48c44e3bbc6dc828e055831"
+    countryCode: "IN"
+  jiosaavn:
+    countryCode: "IN"
+
 plugins:
   - dependency: com.github.lavalink-devs:youtube-source:1.18.2
     snapshot: false
@@ -52,29 +67,15 @@ plugins:
     repository: https://maven.lavalink.dev/releases/
     lavasrc:
       providers:
-        - "scsearch:\"%s\""
         - "jssearch:\"%s\""
         - "ytsearch:\"%s\""
         - "ytmsearch:\"%s\""
       sources:
         spotify: true
-        applemusic: true
-        deezer: true
-        yandexmusic: true
         jiosaavn: true
-        gaana: true
       spotify:
         clientId: "170948aa0bf4471ab68ec6fad28d1190"
         clientSecret: "6ffcdd9dc48c44e3bbc6dc828e055831"
         countryCode: "IN"
-      applemusic:
-        countryCode: "IN"
-        mediaAPIToken: "none"
-      deezer:
-        masterDecryptionKey: "none"
-      yandexmusic:
-        accessToken: "none"
       jiosaavn:
         countryCode: "IN"
-      gaana:
-        accessToken: "none"
