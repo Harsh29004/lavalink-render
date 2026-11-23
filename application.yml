@@ -1,10 +1,15 @@
 server:
-  port: ${PORT:2333}
+  port: ${PORT:10000}
   address: 0.0.0.0
 
 lavalink:
+  plugins:
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.18.2"
+      snapshot: false
+
   server:
     password: "${LAVALINK_SERVER_PASSWORD:youshallnotpass}"
+
     sources:
       youtube: false
       bandcamp: true
@@ -14,20 +19,3 @@ lavalink:
       nico: true
       http: true
       local: false
-    filters:
-      volume: true
-      equalizer: true
-      karaoke: true
-      timescale: true
-      tremolo: true
-      vibrato: true
-      distortion: true
-      rotation: true
-      channelMix: true
-      lowPass: true
-
-logging:
-  level:
-    root: INFO
-    lavalink: INFO
-  
