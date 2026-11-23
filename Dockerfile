@@ -10,4 +10,4 @@ EXPOSE 2333
 
 ENV PORT=2333
 
-CMD ["sh", "-c", "java -Xms128M -Xmx512M -jar Lavalink.jar --spring.config.location=file:/app/application.yml --server.port=$PORT --server.address=0.0.0.0"]
+CMD ["sh", "-c", "java -Xms64M -Xmx220M -XX:+UseSerialGC -jar Lavalink.jar --spring.config.location=file:/app/application.yml --server.port=$PORT --server.address=0.0.0.0"]

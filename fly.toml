@@ -1,0 +1,28 @@
+# fly.toml — Fly.io config for Vision Lavalink
+app = "vision-lavalink"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "2333"
+
+[http_service]
+  internal_port = 2333
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [http_service.checks]
+    [http_service.checks.health]
+      interval = "30s"
+      timeout = "5s"
+      grace_period = "40s"
+      method = "GET"
+      path = "/metrics"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"
+  swap_size_mb = 1024

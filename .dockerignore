@@ -1,0 +1,6 @@
+.git
+.gitignore
+README.md
+prepare.sh
+render.yaml
+*.log
