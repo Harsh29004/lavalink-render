@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: vision-lavalink
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /metrics
+    envVars:
+      - key: PORT
+        value: 2333
